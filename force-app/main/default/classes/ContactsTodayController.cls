@@ -5,7 +5,7 @@ public class ContactsTodayController {
         List<Contact> important_contacts = new List<Contact>();
         List<Id> important_ids = new List<Id>();
         system.debug('----33333----');
-        List<Task> my_tasks = [SELECT Id, Subject, WhoId from Task WHERE OwnerId = :UserInfo.getUserId() AND Status != 'Completed' AND WhoId != null];
+        List<Task> my_tasks = [SELECT Id, Subject, WhoId,WhatId from Task WHERE OwnerId = :UserInfo.getUserId() AND Status != 'Completed' AND WhoId != null];
         List<Event> my_events = [SELECT Id, Subject, WhoId from Event WHERE OwnerId = :UserInfo.getUserId() AND StartDateTime >= :Date.today() AND WhoId != null];
         List<Case> my_cases = [SELECT ID, ContactID, Status, Subject from Case where OwnerId = :UserInfo.getUserId() AND Status != 'Closed'];
         
