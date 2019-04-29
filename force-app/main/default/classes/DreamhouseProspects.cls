@@ -5,7 +5,7 @@ public with sharing class DreamhouseProspects {
         if (sortOrder == null) {
             sortOrder = 'LastName';
         }
-        
+        system.debug('------1111----------');
         return Database.query('SELECT Description,Email,FirstName,Id,LastName,Phone FROM Lead WHERE Company=\'Dreamhouse\' ORDER BY '+sortOrder);
     }
     
